@@ -1,17 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <style type="text/css">
-	#mainPopup {
-		padding: 10px;
-		height: 200px;
-		width: 400px;
-		font-family: Helvetica, Ubuntu, Arial, sans-serif;
-	}
-	h1 {
-		font-size: 2em;
-	}
+  #mainPopup {
+    padding: 10px;
+    height: 200px;
+    width: 400px;
+    font-family: Helvetica, Ubuntu, Arial, sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+  }
 </style>
 
 <div id="mainPopup">
-<h1>Hello extensionizr!</h1>
-<p>To shut this popup down, edit the manifest file and remove the "default popup" key. To edit it, just edit ext/browser_action/browser_action.html. The CSS is there, too.</p>
+  <div>
+    <h1>Welcome to Task Renew</h1>
+    <p>
+      This extension is for RaterLabs contractor attempting to acquire new
+      tasks.
+      <b
+        >If you are not a RaterLabs or Appen contractor this extension is not
+        for you.</b
+      >
+    </p>
+  </div>
+  <div>
+    <h2>Settings:</h2>
+    <p>Set time interval in seconds:</p>
+    <form>
+      <label for="timeInterval">Time Interval:</label>
+      <input type="number" id="timeInterval" name="time" />
+      120 seconds minimum
+    </form>
+  </div>
 </div>
