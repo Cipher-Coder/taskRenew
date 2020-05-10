@@ -18,6 +18,18 @@ h1 {
 .form-input {
   border-radius: 8px;
   border: solid 1px #1a1a1a;
+  outline: none;
 }
 
-.form-input:fo
+.form-input:hover {
+  background-color: #fadfdf;
+}
+
+.form-input:focus {
+  border: solid 1px #cc0000;
+  background-color: #fadfdf;
+}
+
+.min-time {
+  margin-left: 85px;
+}
