@@ -1,0 +1,23 @@
+#mainPopup {
+  padding: 10px;
+  height: 200px;
+  width: 320px;
+  color: #1a1a1a;
+  font-family: Helvetica, Ubuntu, Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.form-id {
+  margin-bottom: 18px;
+}
+
+.form-input {
+  border-radius: 8px;
+  border: solid 1px #1a1a1a;
+}
+
+.form-input:fo

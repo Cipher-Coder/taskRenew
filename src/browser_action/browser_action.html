@@ -1,24 +1,17 @@
 <!DOCTYPE html>
-<style type="text/css">
-  #mainPopup {
-    padding: 10px;
-    height: 200px;
-    width: 400px;
-    font-family: Helvetica, Ubuntu, Arial, sans-serif;
-  }
-  h1 {
-    font-size: 2em;
-  }
-</style>
-
-<div id="mainPopup">
-  <div>
+<html lang="en-US" dir="ltr">
+<head>
+  <title>Task Renew - Acquire tasks with RaterLabs</title>
+  <link rel="stylesheet" href="/css/browser_action.css">
+</head>
+<body id="mainPopup">
+<div>
     <h1>Welcome to Task Renew</h1>
     <p>
-      This extension is for RaterLabs contractor attempting to acquire new
+      This extension is for RaterLabs contractors attempting to acquire new
       tasks.
       <b
-        >If you are not a RaterLabs or Appen contractor this extension is not
+      >If you are not a RaterLabs or Appen contractor this extension is not
         for you.</b
       >
     </p>
@@ -26,10 +19,11 @@
   <div>
     <h2>Settings:</h2>
     <p>Set time interval in seconds:</p>
-    <form>
+    <form class="form-id">
       <label for="timeInterval">Time Interval:</label>
-      <input type="number" id="timeInterval" name="time" />
+      <input type="number" id="timeInterval" class="form-input" name="time" />
       120 seconds minimum
     </form>
   </div>
-</div>
+</body>
+</html>
