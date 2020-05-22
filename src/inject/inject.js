@@ -10,11 +10,3 @@ chrome.extension.sendMessage({}, function (response) {
     }
   }, 10);
 });
-
-/*let myInt = setInterval(setTime, 1000);
-
-function setTime() {
-  let d = new Date();
-  let t = d.toLocaleTimeString();
-  console.log('Current Time: ' + t);
-}*/
