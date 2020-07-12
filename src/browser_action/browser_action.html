@@ -5,7 +5,7 @@
     <title>Task Renew - Acquire tasks with RaterLabs</title>
     <link rel="stylesheet" href="/css/browser_action.css" />
   </head>
-  <body id="mainPopup">
+  <body id="mainPopup" style="background-color: #202124; color: #bdbdbe;">
     <div>
       <h1>Welcome to Task Renew</h1>
       <p>
@@ -23,9 +23,12 @@
       <form class="form-id">
         <label for="timeInterval">Time Interval:</label>
         <input type="number" id="timeInterval" class="form-input" name="time" />
-        <button type="button" class="time-btn" id="update_time_interval">
-          Submit</button
-        ><br /><small class="min-time">120 seconds minimum</small>
+        <div class="button-container">
+          <button type="button" class="time-btn" id="update_time_interval">
+            Save & Start
+          </button>
+        </div>
+        <p class="min-time"><small>120 seconds minimum</small></p>
       </form>
     </div>
   </body>

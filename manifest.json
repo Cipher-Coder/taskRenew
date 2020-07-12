@@ -19,14 +19,5 @@
     "default_title": "browser action demo",
     "default_popup": "src/browser_action/browser_action.html"
   },
-  "permissions": ["notifications", "tabs", "activeTab", "storage"],
-  "content_scripts": [
-    {
-      "matches": [
-        "https://www.google.com/*",
-        "https://google.com/evaluation/ads/beta/rating/index.html"
-      ],
-      "js": ["src/inject/inject.js"]
-    }
-  ]
+  "permissions": ["notifications", "tabs", "activeTab", "storage"]
 }

@@ -30,6 +30,11 @@ h1 {
   background-color: #fadfdf;
 }
 
+.button-container {
+  text-align: center;
+  margin-top: 5px;
+}
+
 .min-time {
-  margin-left: 85px;
+  text-align: center;
 }
