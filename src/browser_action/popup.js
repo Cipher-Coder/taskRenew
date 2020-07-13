@@ -38,3 +38,10 @@ document
 function clearInput() {
   document.getElementById('timeInterval').value = '';
 }
+
+document.getElementById('stop_updating').addEventListener('click', () => {
+  chrome.tabs.executeScript({
+    code:
+      'function stop_refresh() {clearInterval(myInterval)}; stop_refresh();',
+  });
+});
