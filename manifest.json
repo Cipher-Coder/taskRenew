@@ -16,8 +16,8 @@
   },
   "browser_action": {
     "default_icon": "icons/icon19.png",
-    "default_title": "browser action demo",
-    "default_popup": "src/browser_action/browser_action.html"
+    "default_title": "Task Renew",
+    "default_popup": "src/browser_action/popup.html"
   },
   "permissions": ["notifications", "tabs", "activeTab", "storage"]
 }

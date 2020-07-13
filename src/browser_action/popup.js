@@ -7,16 +7,30 @@ document
     if (updated_time === '') {
       let new_time = temp_time * 1000;
       chrome.storage.local.set({ time_interval: new_time }, () => {
-        chrome.tabs.executeScript({
-          file: '/src/inject/inject.js',
-        });
+        chrome.tabs.executeScript(
+          {
+            code: 'let timeout=' + new_time,
+          },
+          function () {
+            chrome.tabs.executeScript({
+              file: '/src/inject/inject.js',
+            });
+          }
+        );
       });
     } else {
       let new_time = updated_time * 1000;
       chrome.storage.local.set({ time_interval: new_time }, () => {
-        chrome.tabs.executeScript({
-          file: '/src/inject/inject.js',
-        });
+        chrome.tabs.executeScript(
+          {
+            code: 'let timeout=' + new_time,
+          },
+          function () {
+            chrome.tabs.executeScript({
+              file: '/src/inject/inject.js',
+            });
+          }
+        );
         clearInput();
       });
     }
