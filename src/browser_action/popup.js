@@ -4,12 +4,14 @@ document
   .getElementById('update_time_interval')
   .addEventListener('click', function () {
     let updated_time = document.getElementById('timeInterval').value;
+    let notification_email = document.getElementById('notification_email')
+      .value;
     if (updated_time === '' || updated_time < 120) {
       let new_time = temp_time * 1000;
       chrome.storage.local.set({ time_interval: new_time }, () => {
         chrome.tabs.executeScript(
           {
-            code: 'let timeout=' + new_time,
+            code: `let timeout= ${new_time}; let myEmail= ${notification_email}`,
           },
           function () {
             chrome.tabs.executeScript({
@@ -23,7 +25,7 @@ document
       chrome.storage.local.set({ time_interval: new_time }, () => {
         chrome.tabs.executeScript(
           {
-            code: 'let timeout=' + new_time,
+            code: `let timeout= ${new_time}; let myEmail= ${notification_email}`,
           },
           function () {
             chrome.tabs.executeScript({
@@ -37,6 +39,7 @@ document
   });
 function clearInput() {
   document.getElementById('timeInterval').value = '';
+  document.getElementById('notification_email').value = '';
 }
 
 document.getElementById('stop_updating').addEventListener('click', () => {

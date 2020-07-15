@@ -4,19 +4,20 @@ console.log(
 
 let myInterval = setInterval(checkTask, timeout);
 function checkTask() {
-  console.log('this is working!!');
-  document.getElementById('gwt-debug-acquire_task_button').click();
+  console.log('This is working!!' + timeout);
+  /*document.getElementById('gwt-debug-acquire_task_button').click();
+  isTaskAvailable();*/
 }
 
-let no_tasks_available = document.getElementById('gwt-debug-butter-bar-text')
-  .value;
+/*let no_tasks_available = document.getElementById('gwt-debug-butter-bar-text')
+  .value;*/
 
 function stop_refresh() {
   clearInterval(myInterval);
 }
 
-function isTaskAvailable() {
-  if (no_tasks_available != 'No tasks are available.') {
+/*function isTaskAvailable() {
+  if (no_tasks_available !== 'No tasks are available.') {
     stop_refresh();
   }
-}
+}*/
