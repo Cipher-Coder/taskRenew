@@ -1,9 +1,9 @@
-//example of using a message handler from the inject scripts
-chrome.extension.onMessage.addListener(function (
-  request,
-  sender,
-  sendResponse
-) {
-  chrome.pageAction.show(tab.id);
-  sendResponse();
+/* chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+  console.log('Message Received' + message);
+}); */
+
+chrome.runtime.onMessage.addListener((data) => {
+  if (data.type === 'notification') {
+    chrome.notifications.create('', data.options);
+  }
 });
