@@ -38,13 +38,13 @@ function send_notification() {
 
 function send_email() {
   let data = new FormData();
-  data.append('email', notification_email);
+  data.set('name', notification_email);
   let base_url = 'https://mattaz.dev/mailer.php';
   let xhr = new XMLHttpRequest();
   xhr.open('POST', base_url);
-  xhr.setRequestHeader(
+  /* xhr.setRequestHeader(
     'Content-Type',
     'application/x-www-form-urlencoded; charset=UTF-8'
-  );
+  ); */
   xhr.send(data);
 }
