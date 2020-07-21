@@ -12,7 +12,7 @@ document
       chrome.storage.local.set({ my_email: notification_email }, () => {
         chrome.tabs.executeScript(
           {
-            code: `let notify="${notification_email}"`,
+            code: "let notification_email ='" + notification_email + "'",
           },
           function () {
             chrome.tabs.executeScript({
@@ -27,7 +27,7 @@ document
       chrome.storage.local.set({ my_email: notification_email }, () => {
         chrome.tabs.executeScript(
           {
-            code: `let notify="${notification_email}"`,
+            code: "let notification_email ='" + notification_email + "'",
           },
           function () {
             chrome.tabs.executeScript({
