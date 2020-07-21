@@ -8,45 +8,40 @@ document
       .value;
     if (updated_time === '' || updated_time < 120) {
       let new_time = temp_time * 1000;
-      chrome.storage.local.set(
-        { time_interval: new_time, user_email: notification_email },
-        () => {
-          chrome.tabs.executeScript(
-            {
-              code: `let timeout= ${new_time};`,
-              code: `let email= ${notification_email};`,
-            },
-            function () {
-              chrome.tabs.executeScript({
-                file: '/src/inject/inject.js',
-              });
-            }
-          );
-        }
-      );
+      console.log(new_time);
+      chrome.storage.local.set({ my_email: notification_email }, () => {
+        chrome.tabs.executeScript(
+          {
+            code: `let notify="${notification_email}"`,
+          },
+          function () {
+            chrome.tabs.executeScript({
+              file: '/src/inject/inject.js',
+            });
+          }
+        );
+      });
     } else {
       let new_time = updated_time * 1000;
-      chrome.storage.local.set(
-        { time_interval: new_time, user_email: notification_email },
-        () => {
-          chrome.tabs.executeScript(
-            {
-              code: `let timeout= ${new_time};`,
-              code: `let email= ${notification_email};`,
-            },
-            function () {
-              chrome.tabs.executeScript({
-                file: '/src/inject/inject.js',
-              });
-            }
-          );
-          clearInput();
-        }
-      );
+      console.log(new_time);
+      chrome.storage.local.set({ my_email: notification_email }, () => {
+        chrome.tabs.executeScript(
+          {
+            code: `let notify="${notification_email}"`,
+          },
+          function () {
+            chrome.tabs.executeScript({
+              file: '/src/inject/inject.js',
+            });
+          }
+        );
+        clearInput();
+      });
     }
   });
 function clearInput() {
   document.getElementById('timeInterval').value = '';
+  document.getElementById('notification_email').value = '';
 }
 
 document.getElementById('stop_updating').addEventListener('click', () => {
