@@ -8,11 +8,17 @@ document
       .value;
     if (updated_time === '' || updated_time < 120) {
       let new_time = temp_time * 1000;
-      console.log(new_time);
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { time: new_time });
+      });
       chrome.storage.local.set({ my_email: notification_email }, () => {
+        let myData = {
+          email_name: notification_email,
+          time_int: new_time,
+        };
         chrome.tabs.executeScript(
           {
-            code: "let notification_email ='" + notification_email + "'",
+            code: `let config = ` + JSON.stringify(myData),
           },
           function () {
             chrome.tabs.executeScript({
@@ -23,11 +29,17 @@ document
       });
     } else {
       let new_time = updated_time * 1000;
-      console.log(new_time);
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { interval: new_time });
+      });
       chrome.storage.local.set({ my_email: notification_email }, () => {
+        let myData = {
+          email_name: notification_email,
+          time_int: new_time,
+        };
         chrome.tabs.executeScript(
           {
-            code: "let notification_email ='" + notification_email + "'",
+            code: `let config = ` + JSON.stringify(myData),
           },
           function () {
             chrome.tabs.executeScript({

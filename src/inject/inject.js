@@ -1,7 +1,9 @@
 console.log(
   'Task Renew has begun searching for new tasks and will notify you when found'
 );
-let interval = 5 * 1000;
+
+let interval = config.time_int;
+let notification_email = config.email_name;
 let myInterval = setInterval(checkTask, interval);
 function checkTask() {
   console.log('This is working!!');
@@ -42,9 +44,5 @@ function send_email() {
   let base_url = 'https://mattaz.dev/mailer.php';
   let xhr = new XMLHttpRequest();
   xhr.open('POST', base_url);
-  /* xhr.setRequestHeader(
-    'Content-Type',
-    'application/x-www-form-urlencoded; charset=UTF-8'
-  ); */
   xhr.send(data);
 }
