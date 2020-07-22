@@ -22,11 +22,16 @@
       <form class="form-id">
         <p>Enter Email for Notification:</p>
         <label for="notification_email">Email:</label>
-        <input type="email" id="notification_email" class="form-input" />
-        <p>Set time interval in seconds:</p>
+        <input
+          type="email"
+          id="notification_email"
+          class="form-input"
+          required
+        />
+        <p>Set time interval in minutes:</p>
         <label for="timeInterval">Time Interval:</label>
         <input type="number" id="timeInterval" class="form-input" name="time" />
-        <p class="min-time"><small>120 seconds minimum</small></p>
+        <p class="min-time"><small>2 min minimum</small></p>
         <div class="button-container">
           <button type="button" class="time-btn" id="update_time_interval">
             Save & Start
