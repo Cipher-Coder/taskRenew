@@ -4,7 +4,7 @@
   width: 320px;
   color: #1a1a1a;
   font-family: Helvetica, Ubuntu, Arial, sans-serif;
-  background-color: #ffffff;
+  background-color: #dfdfdf;
 }
 
 h1 {
@@ -36,5 +36,10 @@ h1 {
 }
 
 .min-time {
+  text-align: center;
+}
+
+.welcome {
+  margin-top: -20px;
   text-align: center;
 }

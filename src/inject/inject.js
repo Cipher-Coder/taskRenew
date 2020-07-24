@@ -7,44 +7,36 @@ function send_serching_dialog() {
     options: {
       title: 'Task Renew has begun!',
       message: 'Task Renew has begun searching for tasks.',
-      iconUrl: 'src/icon48.png',
+      iconUrl: 'src/taskRenew48.png',
       type: 'basic',
     },
   });
 }
 send_serching_dialog();
-
+let no_tasks_available = document.getElementById('gwt-debug-butter-bar-text');
 let interval = config.time_int;
-let myInterval = setInterval(checkTask, interval);
-function checkTask() {
-  console.log('Task Renew is searching...');
+let myInterval = setInterval(startTask, interval);
+function startTask() {
+  start_checking();
+}
+
+function start_checking() {
+  console.log('Task Renew has begun searching...');
   let acquire_task_button = document.getElementById(
     'gwt-debug-acquire_task_button'
   );
-  acquire_task_button.addEventListener('click', () => {
-    let no_tasks_available = document.getElementById(
-      'gwt-debug-butter-bar-text'
-    ).textContent;
-    if (!no_tasks_available) {
-      clearInterval(myInterval);
-      send_notification();
-      send_email();
-    }
-  });
   acquire_task_button.click();
+  setTimeout(check_for_nta, 2000);
 }
 
-/* function stop_refresh() {
-  clearInterval(myInterval);
-  send_notification();
-  send_email();
-} */
-
-/* function isTaskAvailable() {
-  if (no_tasks_available !== 'No tasks are available.') {
-    stop_refresh();
+function check_for_nta() {
+  const NTA = no_tasks_available.textContent;
+  if (NTA.localeCompare('No tasks are available.') !== 0) {
+    clearInterval(myInterval);
+    send_notification();
+    send_email();
   }
-} */
+}
 
 function send_notification() {
   chrome.runtime.sendMessage('', {
@@ -52,7 +44,7 @@ function send_notification() {
     options: {
       title: 'Tasks Found!!',
       message: 'Please return to your computer. Tasks have been found!',
-      iconUrl: 'src/icon48.png',
+      iconUrl: 'src/taskRenew48.png',
       type: 'basic',
     },
   });

@@ -5,9 +5,9 @@
   "description": "Extension for reloading, and attempting to acquire new tasks on RaterLabs project page.",
   "homepage_url": "http://mattaz.com/taskrenew/",
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "16": "icons/taskRenew16.png",
+    "48": "icons/taskRenew48.png",
+    "128": "icons/taskRenew128.png"
   },
   "default_locale": "en",
   "background": {
@@ -15,7 +15,7 @@
     "persistent": false
   },
   "browser_action": {
-    "default_icon": "icons/icon19.png",
+    "default_icon": "icons/taskRenew19.png",
     "default_title": "Task Renew",
     "default_popup": "src/browser_action/popup.html"
   },
