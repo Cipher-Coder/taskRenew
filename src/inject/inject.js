@@ -18,6 +18,7 @@ let interval = config.time_int;
 let myInterval = setInterval(startTask, interval);
 function startTask() {
   start_checking();
+  setTimeout(check_for_nta, 2000);
 }
 
 function start_checking() {
@@ -26,7 +27,6 @@ function start_checking() {
     'gwt-debug-acquire_task_button'
   );
   acquire_task_button.click();
-  setTimeout(check_for_nta, 2000);
 }
 
 function check_for_nta() {
