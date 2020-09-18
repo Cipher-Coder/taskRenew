@@ -8,7 +8,7 @@
 
 &nbsp;
 
-#### _This is for v2 of the EWOQ. v3 solved this problem for the most part. Do not use this if you are using v3 of EWOQ. It will not work.
+#### _This is for v2 of the EWOQ. v3 solved this problem for the most part. Do not use this if you are using v3 of EWOQ. It will not work._
 
 As I am sure you are all well aware, one of the worst parts of this job is the dreaded NTA. I know there are some page refresher tools and things of that nature, that you can possibly use to refresh the page and keep checking for tasks, but I tried to go a step further and made a custom extension for this.
 
