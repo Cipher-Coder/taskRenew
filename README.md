@@ -8,6 +8,8 @@
 
 &nbsp;
 
+#### _This is for v2 of the EWOQ. v3 solved this problem for the most part. Do not use this if you are using v3 of EWOQ. It will not work.
+
 As I am sure you are all well aware, one of the worst parts of this job is the dreaded NTA. I know there are some page refresher tools and things of that nature, that you can possibly use to refresh the page and keep checking for tasks, but I tried to go a step further and made a custom extension for this.
 
 Not only does this extension check for tasks, it will also notify you via a Chrome notification and an email message sent to whatever email you enter. This way, you can keep doing whatever it is you want and you will get an email once tasks have been acquired.
